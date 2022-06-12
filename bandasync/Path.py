@@ -5,26 +5,9 @@ from .FileName import FileName
 
 class Path(str):
 
-	def __new__(C, string: str):
+	def __new__(C, root, path: list[str]):
 
-		drive, path = os.path.splitdrive(string)
-
-		names = []
-		left = path
-		while True:
-			left, name = os.path.split(left)
-			if name:
-				names.append(name)
-			else:
-				break
-
-		result_path = os.path.join(*[
-			FileName(f)
-			for f in reversed(names)
+		return os.path.join(root, *[
+			FileName(p)
+			for p in path
 		])
-		if drive:
-			result = os.path.sep.join([drive, result_path])
-		else:
-			result = result_path
-
-		return result

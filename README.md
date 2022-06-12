@@ -51,10 +51,10 @@ JSON should be like:
 {
     "D:/music/Ambient": [
         "https://lalala.bandcamp.com/music",
-        "https://lololo.bandcamp.com/music"
+        "https://lololo.bandcamp.com/releases"
     ],
     "D:/music/Dungeon Synth": [
-        "https://lululu.bandcamp.com/music",
+        "https://lululu.bandcamp.com/album/wow",
         "https://lilili.bandcamp.com/music"
     ]
 }
@@ -62,6 +62,4 @@ JSON should be like:
 
 ## Bugs
 
-Some artist pages are actually album pages (usually when artist have only one album). Currently `bandasync` can not handle them properly
-
-If you found another bug, please report [here](https://github.com/MentalBlood/bandasync/issues)
+No known, if you found one please report [here](https://github.com/MentalBlood/bandasync/issues)

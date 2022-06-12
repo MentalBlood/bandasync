@@ -12,11 +12,11 @@ from .Container import Container
 class Cover(Container):
 
 	content: Content
-	composer_name: str
+	artist_name: str
 	album_name: str
 
 	async def inside(self, path):
 		yield File(
 			content=self.content,
-			path=Path(os.path.join(path, self.composer_name, self.album_name, 'cover.jpg'))
+			path=Path(path, [self.artist_name, self.album_name, 'cover.jpg'])
 		)
