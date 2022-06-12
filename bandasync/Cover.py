@@ -1,4 +1,3 @@
-import os
 import dataclasses
 
 from .File import File

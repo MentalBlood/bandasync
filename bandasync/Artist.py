@@ -1,6 +1,5 @@
 import os
 import dataclasses
-from loguru import logger
 from bs4 import BeautifulSoup, Tag
 
 from .Path import Path
@@ -49,5 +48,5 @@ class Artist(Container):
 
 					yield Album(Content(url))
 		
-		except Exception as e:
+		except:
 			yield Album(self.page)
