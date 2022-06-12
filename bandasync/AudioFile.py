@@ -32,8 +32,8 @@ class AudioFile:
 				f.add_tags()
 				f.save(data_io)
 
-			data_io.seek(0)
-			tags = easyid3.EasyID3(data_io)
+				data_io.seek(0)
+				tags = easyid3.EasyID3(data_io)
 
 			tags.update(self.tags)
 			tags.save(data_io)
