@@ -13,8 +13,11 @@ class BandcampPage(Container):
 	url: str
 
 	async def inside(self, *args, **kwargs):
+
+		splited = self.url.split('/')
+
 		yield (
 			Album
-			if 'album' in self.url.split('/')
+			if ('album' in splited) or ('track' in splited)
 			else Artist
 		)(Content(self.url))
