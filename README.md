@@ -39,6 +39,27 @@ python -m bandasync https://artist_name.bandcamp.com/album/album_name
 python -m bandasync https://artist_name.bandcamp.com/music
 ```
 
+### Tasks
+
+```bash
+python -m bandasync -f <path_to_json>
+```
+
+JSON should be like:
+
+```json
+{
+    "D:/music/Ambient": [
+        "https://lalala.bandcamp.com/music",
+        "https://lololo.bandcamp.com/music"
+    ],
+    "D:/music/Dungeon Synth": [
+        "https://lululu.bandcamp.com/music",
+        "https://lilili.bandcamp.com/music"
+    ]
+}
+```
+
 ## Bugs
 
 Some artist pages are actually album pages (usually when artist have only one album). Currently `bandasync` can not handle them properly
