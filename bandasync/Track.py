@@ -24,7 +24,7 @@ class Track(Container):
 	async def inside(self, path):
 		yield AudioFile(
 			content=self.content,
-			path=Path(path, [self.artist, self.album, f'{self.title}.mp3']),
+			path=Path(path, [self.composer, self.album, f'{self.title}.mp3']),
 			tags={
 				'title': self.title,
 				'album': self.album,
