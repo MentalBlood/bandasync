@@ -32,7 +32,7 @@ class Content:
 					return response.content
 
 			except Exception as e:
-				if type(e) not in [httpx.PoolTimeout, httpx.ReadTimeout]:
+				if type(e) not in [httpx.PoolTimeout, httpx.ConnectTimeout, httpx.ReadTimeout]:
 					logger.warning(f'{type(e)} {e}')
 
 			await asyncio.sleep(SleepTime(try_number))
