@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
 	setup(
 		name='bandasync',
-		version='1.2.2',
+		version='1.2.3',
 		description='banduncamp remake',
 		long_description=long_description,
 		long_description_content_type='text/markdown',

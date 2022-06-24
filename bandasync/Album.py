@@ -66,6 +66,6 @@ class Album(Container):
 
 		yield Cover(
 			content=Content(cover_url.replace('https', 'http')),
-			artist_name=artist_name,
+			artist_name=composer,
 			album_name=album_name
 		)
