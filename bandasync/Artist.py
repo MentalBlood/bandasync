@@ -34,11 +34,14 @@ class Artist(Container):
 				album_name = g.find('p').text.split('\n')[1].strip()
 				album_path = Path(path, [composer_name, album_name])
 				if not (
-					os.path.exists(album_path) and
-					any(
-						p.endswith('.mp3')
-						for p in os.listdir(album_path)
+					(
+						os.path.exists(album_path) and
+						any(
+							p.endswith('.mp3')
+							for p in os.listdir(album_path)
+						)
 					)
+					or os.path.exists(os.path.join(album_path, 'cover.jpg'))
 				):
 					a = g.find('a')['href']
 					if a.startswith('https'):

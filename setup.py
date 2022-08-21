@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
 	setup(
 		name='bandasync',
-		version='1.3.0',
+		version='1.3.1',
 		description='Fast, working tool for downloading music from bandcamp',
 		long_description=long_description,
 		long_description_content_type='text/markdown',
