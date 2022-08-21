@@ -1,18 +1,18 @@
-import os
 from setuptools import setup, find_packages
 
 
 if __name__ == '__main__':
 
-	long_description = ''
-	if os.path.exists('README.md'):
+	try:
 		with open('README.md', encoding='utf-8') as f:
 			long_description = f.read()
+	except FileNotFoundError:
+		long_description = ''
 
 	setup(
 		name='bandasync',
-		version='1.2.3',
-		description='banduncamp remake',
+		version='1.3.0',
+		description='Fast, working tool for downloading music from bandcamp',
 		long_description=long_description,
 		long_description_content_type='text/markdown',
 		author='mentalblood',

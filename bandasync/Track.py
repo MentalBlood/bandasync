@@ -16,21 +16,23 @@ class Track(Container):
 	title: str
 	album: str
 	artist: str
-	composer: str
 	number: int
+	composer: str
 	duration: int
 	released: bool
+	genre: list[str]
 
 	async def inside(self, path):
 		yield AudioFile(
 			content=self.content,
 			path=Path(path, [self.composer, self.album, f'{self.title}.mp3']),
 			tags={
+				'genre': self.genre,
 				'title': self.title,
 				'album': self.album,
 				'artist': self.artist,
 				'composer': self.composer,
 				'albumartist': self.artist,
-				'tracknumber': str(self.number)
+				'tracknumber': str(self.number),
 			}
 		)

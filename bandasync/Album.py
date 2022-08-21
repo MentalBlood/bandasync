@@ -44,6 +44,11 @@ class Album(Container):
 
 		artist_name = data['artist']
 
+		genre_tags = [
+			t.text
+			for t in root.select('.tag')
+		]
+
 		have_tracks = False
 		for t in data['trackinfo']:
 			try:
@@ -51,8 +56,9 @@ class Album(Container):
 					content=Content(t['file']['mp3-128']),
 					title=t['title'],
 					album=album_name,
-					artist=artist_name,
+					genre=genre_tags,
 					composer=composer,
+					artist=artist_name,
 					number=t['track_num'],
 					duration=t['duration'],
 					released=not t['unreleased_track']
