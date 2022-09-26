@@ -28,8 +28,13 @@ class Content:
 		while True:
 
 			try:
-				if (response := await client.get(self.url)).status_code == 200:
+
+				response = await client.get(self.url)
+
+				if response.status_code == 200:
 					return response.content
+				elif response.status_code == 404:
+					return b''
 
 			except Exception as e:
 				if type(e) not in [
