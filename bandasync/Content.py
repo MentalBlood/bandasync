@@ -43,7 +43,8 @@ class Content:
 					httpx.PoolTimeout,
 					httpx.ConnectTimeout,
 					httpx.ConnectError,
-					httpx.ReadTimeout
+					httpx.ReadTimeout,
+					httpx.RemoteProtocolError
 				]:
 					logger.warning(f'{type(e)} {e}')
 
