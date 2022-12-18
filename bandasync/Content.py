@@ -13,7 +13,7 @@ class SleepTime(float):
 		return random.randrange(2, 14) / 10 * sqrt(try_number)
 
 
-client = httpx.AsyncClient()
+client = httpx.AsyncClient(limits=httpx.Limits(max_connections=500))
 
 
 @dataclasses.dataclass(frozen=True)
@@ -35,6 +35,8 @@ class Content:
 					return response.content
 				elif response.status_code == 404:
 					return b''
+				elif response.status_code != 429:
+					logger.warning(f'{self.url} {response}')
 
 			except Exception as e:
 				if type(e) not in [
